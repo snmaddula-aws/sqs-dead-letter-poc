@@ -1,4 +1,4 @@
-package com.dell.sqspoc.domain;
+package snmaddula.sqs.deadletter.poc.dto;
 
 import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_EMPTY;
 
@@ -7,10 +7,15 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 
+ * @author snmaddula
+ *
+ */
 @Setter
 @Getter
 @JsonInclude(NON_EMPTY)
-public class CreateRes {
+public class QueueResponse {
 
 	private String queueName;
 	private String queueUrl;

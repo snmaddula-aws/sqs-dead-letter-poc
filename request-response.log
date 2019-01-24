@@ -1,0 +1,53 @@
+CREATE REQUEST
+
+POST: http://localhost:9090/sqs/create
+{
+  "queueName" : "alpha",
+  "dlQueueName" : "alpha-dl",
+  "dlEnabled": true,
+    "RedrivePolicy" : {
+      "maxReceiveCount" : 2
+    }
+}
+
+CREATE RESPONSE:
+{
+    "queueArn": "arn:aws:sqs:us-east-2:395508535008:alpha",
+    "dlQueueArn": "arn:aws:sqs:us-east-2:395508535008:alpha-dl"
+}
+
+----------------------------------------------------------------------------------
+
+
+PUBLISH REQUEST:
+
+POST: http://localhost:9090/sqs/publish
+{
+	"queueName": "alpha",
+	"payload": {
+		"dividend": 10,
+		"divisor": 2
+	}
+}
+
+PUBLISH RESPONSE:
+7a805ca8-6afc-4224-9734-d02c8c83a0d5
+
+----------------------------------------------------------------------------------
+
+CONSUME REQUEST:
+
+POST: http://localhost:9090/sqs/consume
+
+{
+	"queueName": "alpha"
+}
+
+CONSUME RESPONSE:
+
+{
+	"dividend": 10,
+	"divisor": 2,
+	"quotient": 5
+}
+

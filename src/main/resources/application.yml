@@ -1,0 +1,17 @@
+server:
+  port: 9090
+  
+cloud:
+  aws: 
+    profile: siva
+    region:
+      static: us-east-2
+
+
+swagger: 
+  title: AWS SQS Dead Letter Queue Demo API
+  description: REST Documentation for Simple SQS Poc demonstrating Dead Letter Queue feature.
+  version: 1.0
+  contact-name: snmaddula
+  contact-url: 
+  contact-email: snmaddula@gmail.com

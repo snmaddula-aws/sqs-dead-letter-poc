@@ -10,10 +10,10 @@
 		<version>2.1.2.RELEASE</version>
 	</parent>
 
-	<groupId>com.dell.sqspoc</groupId>
-	<artifactId>java-sqs-poc</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	
+	<groupId>snmaddula.amazon.sqs</groupId>
+	<artifactId>sqs-deadletter-poc</artifactId>
+	<version>1.0</version>
+
 	<name>java-sqs-poc</name>
 	<description>Simple SQS Poc demonstrating Dead Letter Queue feature.</description>
 
@@ -34,6 +34,17 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 
 		<dependency>
@@ -66,6 +77,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

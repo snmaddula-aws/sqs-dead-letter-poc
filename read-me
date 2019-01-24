@@ -1,0 +1,23 @@
+
+# SET UP AWS CREDENTIAL PROFILE
+	-> Copy the contents of "credential" file from the project source code into your ~/.aws/credential file
+----------------------------
+
+# START THE APP
+	-> Run the main program JavaSqsPocApp
+----------------------------
+
+# TO CREATE A SIMPLE QUEUE:
+	-> curl -X POST http://localhost:8080/sqs/create?queueName=queue-1
+	
+	This method creates queue, if it already does not exist. Also it returns the queue-url
+	
+-----------------------------
+
+# TO CREATE A SIMPLE QUEUE:
+	-> curl -X POST http://localhost:8080/sqs/create-with-dl?srcQueue=queue-1&dlQueue=dl-queue-1&maxReceiveCount=2
+	
+	This method creates 2 queues with names as provided and attaches the dl-queue to the source-queue.
+	-> source-queue = queue-1
+	-> dl-queue = dl-queue-1
+	
